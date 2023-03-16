@@ -1,15 +1,11 @@
 package main
 
 import (
-	"fmt"
-	"leetcode/roman"
+	"leetcode/prefix"
+	"log"
 )
 
 func main() {
-	s := "IV"
-	fmt.Println(roman.RomanToInt(s))
-	s = "LVIII"
-	fmt.Println(roman.RomanToInt(s))
-	s = "MCMXCIV"
-	fmt.Println(roman.RomanToInt(s))
+	strs := []string{"apple", "apple", "apple"}
+	log.Println(prefix.LongestCommonPrefix(strs))
 }

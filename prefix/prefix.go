@@ -1,18 +1,18 @@
 package prefix
 
-import "fmt"
-
 func LongestCommonPrefix(strs []string) string {
-	var res string
-
 	substrs := make([][]byte, len(strs))
 	for i, str := range strs {
 		substrs[i] = []byte(str)
 	}
-
-	for _, sub := range substrs {
-		fmt.Println(sub)
+	var res []byte
+	for i, b := range substrs[0] {
+		for j := 1; j < len(substrs); j++ {
+			if i >= len(substrs[j]) || substrs[j][i] != b {
+				return string(res)
+			}
+		}
+		res = append(res, b)
 	}
-
-	return res
+	return string(res)
 }
